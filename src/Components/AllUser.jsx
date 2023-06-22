@@ -25,7 +25,7 @@ const AllUser = ({ user, setUsers }) => {
       phone,
     };
 
-    fetch(`http://localhost:5000/updateuser/${_id}`, {
+    fetch(`https://skdis-health-server.vercel.app/updateuser/${_id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -44,7 +44,7 @@ const AllUser = ({ user, setUsers }) => {
             timer: 1500,
           });
           e.target.reset();
-          fetch("http://localhost:5000/users")
+          fetch("https://skdis-health-server.vercel.app/users")
             .then((res) => res.json())
             .then((data) => setUsers(data));
           setIsOpen(false);
@@ -53,7 +53,7 @@ const AllUser = ({ user, setUsers }) => {
     console.log(_id);
   };
   const handleDelete = () => {
-    fetch(`http://localhost:5000/userdelete/${_id}`, {
+    fetch(`https://skdis-health-server.vercel.app/userdelete/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -66,7 +66,7 @@ const AllUser = ({ user, setUsers }) => {
             showConfirmButton: false,
             timer: 1500,
           });
-          fetch("http://localhost:5000/users")
+          fetch("https://skdis-health-server.vercel.app/users")
             .then((res) => res.json())
             .then((data) => setUsers(data));
         }

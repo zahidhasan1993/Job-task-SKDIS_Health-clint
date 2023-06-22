@@ -18,7 +18,7 @@ const Form = () => {
     // Do something with the form data (e.g., send it to a server)
     // console.log("Submitted:", name, email, password);
 
-    fetch("http://localhost:5000/adduser", {
+    fetch("https://skdis-health-server.vercel.app/adduser", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newUser),
